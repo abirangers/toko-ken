@@ -48,6 +48,7 @@ header {
     background-color: var(--bg-color);
     box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
     z-index: 100;
+    padding: 0 20px;
 }
 
 .nav {
@@ -58,7 +59,7 @@ header {
 }
 
 .logo {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: var(--sec-color);
     text-transform: uppercase;
@@ -76,7 +77,7 @@ header {
 
 .nav-list .list .content {
     text-transform: capitalize;
-    font-size: 1.24rem;
+    font-size: 1.2rem;
     font-weight: 500;
     color: var(--text-color);
     
@@ -438,6 +439,9 @@ header {
 
 /* RESPONSIVE & BREAKPOINTS */
 @media screen and (max-width: 1080px) {
+    header {
+        padding: 0;
+    }
     .nav {
         padding: 15px;
     }
@@ -490,11 +494,12 @@ header {
     }
 
     .navbar.aktif {
-        height: 120px;
+        height: 135px;
     }
 
     .nav-list .list {
         margin: 6px auto;
+        /* padding: 0; */
     }
 
     .bars-right {
@@ -562,6 +567,10 @@ header {
         padding-top: 0;
     }
 
+    .bars-right {
+        margin-top: 0;
+    }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -576,17 +585,30 @@ header {
     }
 }
 
+@media screen and (max-width: 500px) {
+    .nav {
+        padding: 15px;
+    }
+    .logo {
+        font-size: 1.3rem;
+    }
+    .navbar {
+        top: 60px;
+    }
+}
+
 /* For Medium Devices */
 @media screen and (max-width: 400px) {
     .nav {
-        padding: 11px;
+        padding: 13px;
     }
     .logo {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
     .cart {
         width: 320px;
     }
+    
 }
 
 /* For Small Devices */
