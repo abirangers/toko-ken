@@ -455,6 +455,7 @@ header {
     .shop {
         margin-top: 2rem;
     }
+    
 }
 
 /* RESPONSIVE & BREAKPOINTS */
@@ -479,11 +480,14 @@ header {
         left: 0;
         right: 0;
         height: 0;
-        background-color: #fff;
+        background-color: var(--bg-color);
         width: 100%;
         z-index: 99;
         overflow: hidden;
         transition: all 0.4s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .nav-list {
@@ -491,10 +495,11 @@ header {
         align-items: flex-end;
         justify-content: flex-end;
         flex-direction: column;
+        /* padding: 5px 0; */
     }
 
     .navbar.aktif {
-        height: 135px;
+        height: 140px;
     }
 
     .nav-list .list {
@@ -567,6 +572,10 @@ header {
         padding-top: 0;
     }
 
+    #bantuan {
+        padding-top: 0;
+    }
+
     .bars-right {
         margin-top: 0;
     }
@@ -608,6 +617,9 @@ header {
     .cart {
         width: 320px;
     }
+    .navbar {
+        top: 50px;
+    }
     
 }
 
@@ -619,4 +631,5 @@ header {
     .cart {
         width: 280px;
     }
+    
 }
