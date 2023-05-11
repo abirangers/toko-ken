@@ -142,23 +142,12 @@ function updateTotal() {
     let total = 0;
     cartBoxes.forEach(cartBox => {
         let priceElement = cartBox.querySelector('.cart-price');
-        let price = parseFloat(priceElement.innerHTML.replace('Rp.', ""));
+        let price = priceElement.innerHTML.replace('Rp.', '').replace('.', '');
         let quantity = cartBox.querySelector('.cart-quantity').value;
         total += price * quantity;
     });
-
-    
-
-    console.log(total);
-
-    // keep 2 digits after the decimal point
-    // const formatID =  Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(total);
-    total = total.toFixed(3);
-    // total = Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(total);
-    // // or you can use also
-    // total = Math.round(total * 100) / 100;
-
-    totalElement.innerHTML = total;
+    total = Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(total);
+    totalElement.innerHTML = total; 
 }
 
 
@@ -177,3 +166,23 @@ function CartBoxComponent(title, price, imgSrc) {
     <i class='bx bxs-trash-alt cart-remove'></i>
 </div>`;
 }
+
+
+// function shopProductComponent() {
+//     fetch('assets/product/product.json')
+//     .then(response => response.json())
+//     .then(response => {
+//         const shopContent = document.querySelector('.shop-content');
+//         let productContent = '';
+//         response.forEach(p => {
+//             productContent += `<div class="product-box">
+//                         <img src="${p.image}" alt="" class="product-img">
+//                         <h2 class="product-title">${p.name}</h2>
+//                         <span class="product-price">${p.price}</span>
+//                         <i class='bx bx-shopping-bag add-cart'></i>
+//                     </div>`;
+//         });
+//         shopContent.innerHTML = productContent;
+//     });
+// }
+// shopProductComponent();

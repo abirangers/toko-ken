@@ -62,7 +62,7 @@ header {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--sec-color);
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 .logo span {
@@ -80,7 +80,11 @@ header {
     font-size: 1.2rem;
     font-weight: 500;
     color: var(--text-color);
-    
+    transition: all 0.35s;
+}
+.nav-list .list .content:hover {
+    color: var(--main-color);
+    transition: all 0.35s;
 }
 
 #cart-icon {
