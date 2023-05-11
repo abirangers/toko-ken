@@ -1,0 +1,42 @@
+[
+    {
+        "image": "assets/img/product1.webp",
+        "name": "T-shirt Muhammad Ali // Morrow",
+        "price": "Rp. 125.000"
+    },
+    {
+        "image": "assets/img/product2.jpg",
+        "name": "Backpack Canvas Retro Vintage",
+        "price": "Rp. 168.888"
+    },
+    {
+        "image": "assets/img/product3.jpg",
+        "name": "The North Face Jacket",
+        "price": "Rp. 420.000"
+    },
+    {
+        "image": "assets/img/product4.jpg",
+        "name": "ETERNALWORKS STRIPE GREEN KNITWEAR",
+        "price": "Rp. 157.050"
+    },
+    {
+        "image": "assets/img/product5.jpg",
+        "name": "Aloof SMILE BOY",
+        "price": "Rp. 299.000"
+    },
+    {
+        "image": "assets/img/product6.jpg",
+        "name": "trucker hat",
+        "price": "Rp. 69.999"
+    },
+    {
+        "image": "assets/img/product7.jpg",
+        "name": "tas the north face borealis backpack",
+        "price": "Rp. 679.000"
+    },
+    {
+        "image": "assets/img/product8.jpeg",
+        "name": "new balance 992",
+        "price": "Rp. 550.000"
+    }
+]
