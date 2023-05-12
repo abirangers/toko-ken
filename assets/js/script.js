@@ -3,6 +3,8 @@ const cartIcon = document.querySelector('#cart-icon');
 const cart = document.querySelector('.cart');
 const closeCart = document.querySelector('#cart-close');
 const btnNav = document.querySelector('.bars-right .bars');
+const eye = document.querySelectorAll('.eye');
+const detail = document.querySelector('.detail');
 
 btnNav.addEventListener('click', () => {
     const ulNav = document.querySelector('.navbar');
@@ -15,6 +17,18 @@ cartIcon.addEventListener('click', () => {
 
 closeCart.addEventListener('click', () => {
     cart.classList.remove('active');
+});
+
+eye.forEach(e => {
+    e.addEventListener('click', () => {
+        // let detailP = detailProduct();
+        // console.log(detailP);
+        // document.body.appendChild(detailProduct);
+        // detail.classList.add('fixed');
+        detail.classList.add('fixed');
+        document.body.style.overflow = 'hidden';
+        // detail.style.transition = 'all 0.3s';
+    });
 });
 
 // Start when the document is ready
@@ -56,7 +70,7 @@ function addEvents() {
     });
 
     // Add item to cart
-    let addCart_btns = document.querySelectorAll('.add-cart');
+    let addCart_btns = document.querySelectorAll('.button-product .add-cart');
     addCart_btns.forEach(btn => {
         btn.addEventListener('click', handle_addCartItem);
         // btn.addEventListener('click', handle_addCartItem);
@@ -74,7 +88,7 @@ function addEvents() {
 let itemsAdded = [];
 //======================= HANDLE EVENTS FUNCTION =======================
 function handle_addCartItem() {
-    let product = this.parentElement;
+    let product = this.parentElement.parentElement;
     let title = product.querySelector('.product-title').innerHTML;
     let price = product.querySelector('.product-price').innerHTML;
     let imgSrc = product.querySelector('.product-img').src;
@@ -166,6 +180,28 @@ function CartBoxComponent(title, price, imgSrc) {
     <i class='bx bxs-trash-alt cart-remove'></i>
 </div>`;
 }
+
+// function detailProduct() {
+//     return `
+//     <div class="detail">
+//         <div class="container-detail">
+//             <div class="container-image">
+//                 <div class="content-image">
+//                     <img src="assets/img/product1.webp" alt="" class="detail-image">
+//                 </div>
+//             </div>
+//             <div class="container-title">
+//                 <div class="content-title">
+//                     <h2 class="title">T-shirt Muhammad Ali // Morrow</h2>
+//                     <!-- <h4 class="semi-title">men's sport</h4> -->
+//                     <p class="detail-paragraf">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quae nihil eos incidunt eligendi consequuntur reprehenderit asperiores obcaecati voluptas possimus accusantium aut, labore, temporibus vero quia distinctio omnis ab molestias maxime nesciunt, nam est adipisci! Quos inventore dolorum hic iusto.</p>
+//                     <h2 class="detail-price">Rp. 125.000</h2>
+//                     <a href="#" class="button-detail">add to cart</a>
+//                 </div>
+//             </div>
+//         </div>
+//     </div>`
+// }
 
 
 // function shopProductComponent() {

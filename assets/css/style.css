@@ -342,10 +342,18 @@ header {
     font-weight: 500;
 }
 
-.add-cart {
+.button-product {
     position: absolute;
     bottom: 0;
     right: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2px;
+}
+
+.add-cart, .eye {
+    
+    /* display: flex; */
     background-color: var(--text-color);
     color: var(--bg-color);
     padding: 10px;
@@ -438,8 +446,99 @@ header {
     font-size: 4.8rem;
 }
 
+/*=============== detail product ===============*/
+.detail {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.5s;
+    opacity: 0;
+}   
 
+.detail.fixed {
+    display: flex;
+    opacity: 1;
+    transition: all 0.5s;
+}
 
+.container-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1400px;
+    width: 100%;
+    padding: 0 2rem;
+    background-color: var(--bg-color);
+    overflow: hidden;
+    /* margin: 0 .8rem; */
+}
+
+.container-image, .container-title {
+    max-width: 32rem;
+    width: 50%;
+    height: 37rem;
+}
+
+.container-image .content-image {
+    /* width: 100%; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.container-image .content-image .detail-image {
+    width: 100%;
+}
+
+.container-detail .container-title {
+    display: flex;
+    align-items: center;
+}
+
+.container-detail .container-title .content-title {
+    padding: 40px;
+}
+
+.container-detail .container-title .content-title .title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    
+}
+
+.container-detail .container-title .content-title .detail-paragraf {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 0.4rem;
+}
+
+.container-detail .container-title .content-title .detail-price {
+    font-size: 1.7rem;
+    
+}
+
+.container-detail .container-title .content-title .button-detail {
+    display: inline-block;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    padding: 10px;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 1rem;
+    border-radius: .4rem;
+    margin: 1rem 0;
+    letter-spacing: 1px;
+}
 
 /* RESPONSIVE & BREAKPOINTS */
 @media screen and (max-width: 1080px) {
