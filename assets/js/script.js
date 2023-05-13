@@ -4,7 +4,9 @@ const cart = document.querySelector('.cart');
 const closeCart = document.querySelector('#cart-close');
 const btnNav = document.querySelector('.bars-right .bars');
 const eye = document.querySelectorAll('.eye');
-const detail = document.querySelector('.detail');
+const detailProductParent = document.querySelector('.detail');
+
+
 
 btnNav.addEventListener('click', () => {
     const ulNav = document.querySelector('.navbar');
@@ -12,24 +14,21 @@ btnNav.addEventListener('click', () => {
 });
 
 cartIcon.addEventListener('click', () => {
-    cart.classList.add('active');
+    cart.classList.toggle('active');
 });
 
 closeCart.addEventListener('click', () => {
     cart.classList.remove('active');
 });
 
-eye.forEach(e => {
-    e.addEventListener('click', () => {
-        // let detailP = detailProduct();
-        // console.log(detailP);
-        // document.body.appendChild(detailProduct);
-        // detail.classList.add('fixed');
-        detail.classList.add('fixed');
-        document.body.style.overflow = 'hidden';
-        // detail.style.transition = 'all 0.3s';
-    });
-});
+// eye.forEach(e => {
+//     e.addEventListener('click', () => {
+//         detailProductParent.classList.add('fixed');
+//     });
+// });
+
+
+
 
 // Start when the document is ready
 if(document.readyState == "loading") {
@@ -51,6 +50,7 @@ function start() {
 function update() {
     addEvents();
     updateTotal();
+    // handle_addDetailItem();
 }
 
 
@@ -70,17 +70,35 @@ function addEvents() {
     });
 
     // Add item to cart
-    let addCart_btns = document.querySelectorAll('.button-product .add-cart');
+    let addCart_btns = document.querySelectorAll('.add-cart');
     addCart_btns.forEach(btn => {
         btn.addEventListener('click', handle_addCartItem);
-        // btn.addEventListener('click', handle_addCartItem);
     });
+
+    // add item to detail item
+    const eye = document.querySelectorAll('.eye');
+    eye.forEach(e => {
+        e.addEventListener('click', handle_addDetailItem);
+    });
+
+    
 
     // Buy Order
     const buy_btn = document.querySelector('.btn-buy');
     buy_btn.addEventListener('click', handle_buyOrder);
 }
 
+function getProductData(product) {
+    let title = product.querySelector('.product-title').innerHTML;
+    let price = product.querySelector('.product-price').innerHTML;
+    let imgSrc = product.querySelector('.product-img').src;
+
+    return {
+        title,
+        price,
+        imgSrc
+    };
+}
 
 
 
@@ -89,15 +107,12 @@ let itemsAdded = [];
 //======================= HANDLE EVENTS FUNCTION =======================
 function handle_addCartItem() {
     let product = this.parentElement.parentElement;
-    let title = product.querySelector('.product-title').innerHTML;
-    let price = product.querySelector('.product-price').innerHTML;
-    let imgSrc = product.querySelector('.product-img').src;
-    console.log(title, price, imgSrc);
-    
+    let productData = getProductData(product);
+
     let newToAdd = {
-        title,
-        price,
-        imgSrc,
+        title: productData.title,
+        price: productData.price,
+        imgSrc: productData.imgSrc,
     };
 
     // handle item is already exist
@@ -107,11 +122,9 @@ function handle_addCartItem() {
     } else {
         itemsAdded.push(newToAdd);
     }
-
-    // Add item to cart
-
+    
     // Add product to cart
-    let cartBoxElement = CartBoxComponent(title, price, imgSrc);
+    let cartBoxElement = CartBoxComponent(newToAdd.title, newToAdd.price, newToAdd.imgSrc);
     let newNode = document.createElement("div");
     newNode.innerHTML = cartBoxElement;
     const cartContent = cart.querySelector(".cart-content");
@@ -164,7 +177,49 @@ function updateTotal() {
     totalElement.innerHTML = total; 
 }
 
+function handle_addDetailItem() {
+    detailProductParent.classList.add('fixed');
+    let product = this.parentElement.parentElement;
+    let productData = getProductData(product);
+    let newNodeDetail = document.createElement('div');
+    newNodeDetail.innerHTML = detailProduct(productData.title, productData.price, productData.imgSrc);
+    detailProductParent.appendChild(newNodeDetail);
 
+    const kembali = document.querySelectorAll('.kembali');
+    kembali.forEach(k => {
+        k.onclick = (e) => {
+            detailProductParent.classList.remove('fixed');
+            detailProductParent.removeChild(newNodeDetail);
+            e.preventDefault();
+        };
+    });
+    
+    window.onclick = (e) => {
+        if(e.target === detailProductParent) {
+            detailProductParent.classList.remove('fixed');
+            detailProductParent.removeChild(newNodeDetail);
+        };
+    };
+    const buttonDetail = document.querySelectorAll('.button-detail');
+    buttonDetail.forEach(bd => {
+        bd.addEventListener('click', function() {
+            let cartBoxElement = CartBoxComponent(productData.title, productData.price, productData.imgSrc);
+            let newNode = document.createElement("div");
+            newNode.innerHTML = cartBoxElement;
+            const cartContent = cart.querySelector(".cart-content");
+            cartContent.appendChild(newNode);
+            update();
+
+        });
+    }); 
+    // handle_addProductDetail();
+    update();
+}
+
+// function handle_addProductDetail() {
+//     let product = this.parentElement.parentElement;
+//     console.log(product);
+// }
 
 //======================= HTML COMPONENTS =======================
 function CartBoxComponent(title, price, imgSrc) {
@@ -181,44 +236,22 @@ function CartBoxComponent(title, price, imgSrc) {
 </div>`;
 }
 
-// function detailProduct() {
-//     return `
-//     <div class="detail">
-//         <div class="container-detail">
-//             <div class="container-image">
-//                 <div class="content-image">
-//                     <img src="assets/img/product1.webp" alt="" class="detail-image">
-//                 </div>
-//             </div>
-//             <div class="container-title">
-//                 <div class="content-title">
-//                     <h2 class="title">T-shirt Muhammad Ali // Morrow</h2>
-//                     <!-- <h4 class="semi-title">men's sport</h4> -->
-//                     <p class="detail-paragraf">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quae nihil eos incidunt eligendi consequuntur reprehenderit asperiores obcaecati voluptas possimus accusantium aut, labore, temporibus vero quia distinctio omnis ab molestias maxime nesciunt, nam est adipisci! Quos inventore dolorum hic iusto.</p>
-//                     <h2 class="detail-price">Rp. 125.000</h2>
-//                     <a href="#" class="button-detail">add to cart</a>
-//                 </div>
-//             </div>
-//         </div>
-//     </div>`
-// }
-
-
-// function shopProductComponent() {
-//     fetch('assets/product/product.json')
-//     .then(response => response.json())
-//     .then(response => {
-//         const shopContent = document.querySelector('.shop-content');
-//         let productContent = '';
-//         response.forEach(p => {
-//             productContent += `<div class="product-box">
-//                         <img src="${p.image}" alt="" class="product-img">
-//                         <h2 class="product-title">${p.name}</h2>
-//                         <span class="product-price">${p.price}</span>
-//                         <i class='bx bx-shopping-bag add-cart'></i>
-//                     </div>`;
-//         });
-//         shopContent.innerHTML = productContent;
-//     });
-// }
-// shopProductComponent();
+function detailProduct(title, price, imgSrc) {
+    return `
+        <div class="container-detail">
+            <div class="container-image">
+                <div class="content-image">
+                    <img src="${imgSrc}" alt="" class="detail-image">
+                </div>
+            </div>
+            <div class="container-title">
+                <div class="content-title">
+                    <a href="#" class="kembali">kembali</a>
+                    <h2 class="title">${title}</h2>
+                    <p class="detail-paragraf">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quae nihil eos incidunt eligendi consequuntur reprehenderit asperiores obcaecati voluptas possimus accusantium aut, labore, temporibus vero quia distinctio omnis ab molestias maxime nesciunt, nam est adipisci! Quos inventore dolorum hic iusto.</p>
+                    <h2 class="detail-price">${price}</h2>
+                    <a href="#" class="button-detail">add to cart</a>
+                </div>
+            </div>
+        </div>`
+}

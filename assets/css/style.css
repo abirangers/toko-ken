@@ -460,12 +460,13 @@ header {
     right: 0;
     bottom: 0;
     transition: all 0.5s;
-    opacity: 0;
+    /* opacity: 0; */
 }   
 
 .detail.fixed {
     display: flex;
-    opacity: 1;
+    /* opacity: 1; */
+    overflow: hidden;
     transition: all 0.5s;
 }
 
@@ -473,7 +474,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 1400px;
+    max-width: 1200px;
     width: 100%;
     padding: 0 2rem;
     background-color: var(--bg-color);
@@ -527,7 +528,7 @@ header {
     
 }
 
-.container-detail .container-title .content-title .button-detail {
+.container-detail .container-title .content-title .button-detail, .container-detail .container-title .content-title .kembali {
     display: inline-block;
     background-color: var(--text-color);
     color: var(--bg-color);
