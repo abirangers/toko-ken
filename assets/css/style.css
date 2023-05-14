@@ -50,6 +50,11 @@ header {
     z-index: 100;
     padding: 0 20px;
 }
+header.static {
+    position: sticky;
+    top: 0;
+    left: 0;
+}
 
 .nav {
     display: flex;
@@ -241,7 +246,7 @@ header {
 }
 
 .home-content .home-image {
-    flex-basis: 50%;
+    text-align: center;
     height: 100%;
 }
 
@@ -249,12 +254,10 @@ header {
     width: 100%;
     height: 100%;
     object-fit: contain;
-   /* align-content: center; */
 }
 
 .home-content .home-title {
     margin: 0 1.5rem;
-    flex-basis: 50%;
 }
 
 .home-content .home-title h1 {
@@ -460,6 +463,7 @@ header {
     right: 0;
     bottom: 0;
     transition: all 0.5s;
+    padding-top: 75px;
     /* opacity: 0; */
 }   
 
@@ -476,16 +480,18 @@ header {
     justify-content: center;
     max-width: 1200px;
     width: 100%;
+    height: 37rem;
     padding: 0 2rem;
     background-color: var(--bg-color);
     overflow: hidden;
+    animation: detailAnimate 0.27s ease-in-out;
     /* margin: 0 .8rem; */
 }
 
 .container-image, .container-title {
     max-width: 32rem;
     width: 50%;
-    height: 37rem;
+
 }
 
 .container-image .content-image {
@@ -512,8 +518,7 @@ header {
     font-size: 2rem;
     font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 0.4rem;
-    
+    margin-bottom: 0.4rem;  
 }
 
 .container-detail .container-title .content-title .detail-paragraf {
@@ -525,7 +530,6 @@ header {
 
 .container-detail .container-title .content-title .detail-price {
     font-size: 1.7rem;
-    
 }
 
 .container-detail .container-title .content-title .button-detail, .container-detail .container-title .content-title .kembali {
@@ -541,7 +545,47 @@ header {
     letter-spacing: 1px;
 }
 
+/* detail animation */
+@keyframes detailAnimate {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /* RESPONSIVE & BREAKPOINTS */
+@media screen and (min-width: 1400px) {
+    
+    .home-content .home-image {
+        text-align: end;
+        height: 100%;
+    }
+    
+    .home-content .home-image img {
+        height: 100%;
+        object-fit: contain;
+    }
+}
+@media screen and (max-width: 1400px) {
+    .home-content .home-image, .home-content .home-title {
+        flex-basis: 50%;
+    }
+    .home-content .home-image img {
+        width: 100%;
+    }
+    .home-content .home-image {
+        text-align: end;
+        height: 100%;
+    }
+    .home-content .home-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
 @media screen and (max-width: 1080px) {
     header {
         padding: 0;
@@ -641,6 +685,10 @@ header {
         order: 2;
     }
 
+    /* .home-content .home-image img {
+        width: 100%;
+    } */
+
     .home-content .home-title {
         flex-grow: 2;
         width: 100%;
@@ -684,8 +732,54 @@ header {
         margin-top: 0;
     }
 
+    .container-detail {
+        flex-direction: column;
+    }
+
+    .container-image, .container-title {
+        max-width: 20rem;
+        width: 100%;
+        /* height: 20rem; */
+    }
+
 }
 
+@media screen and (max-height: 768px) {
+    .container-detail {
+        max-width: 1000px;
+        height: 31rem;
+    }
+}
+@media screen and (max-height: 600px) {
+    .container-detail {
+        max-width: 900px;
+        height: 30rem;
+    }
+    .container-detail .container-title .content-title .title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 0.4rem;  
+    }
+    .container-detail .container-title .content-title .detail-paragraf {
+        font-size: .9rem;
+        line-height: 1.6;
+        color: var(--text-color);
+        margin-bottom: 0.4rem;
+    }
+    .container-detail .container-title .content-title .detail-price {
+        font-size: 1.5rem;
+    }
+    .container-detail .container-title .content-title .button-detail, .container-detail .container-title .content-title .kembali {
+        padding: 10px;
+        text-transform: capitalize;
+        font-weight: 400;
+        font-size: .8rem;
+        border-radius: .4rem;
+        margin: .4rem 0;
+        letter-spacing: 1px;
+    }
+}
 @media screen and (max-width: 768px) {
     .bantuan-content .the-content:hover {
         transform: scale(1.18);

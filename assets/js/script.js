@@ -5,7 +5,7 @@ const closeCart = document.querySelector('#cart-close');
 const btnNav = document.querySelector('.bars-right .bars');
 const eye = document.querySelectorAll('.eye');
 const detailProductParent = document.querySelector('.detail');
-
+const headerNav = document.querySelector('header');
 
 
 btnNav.addEventListener('click', () => {
@@ -178,6 +178,7 @@ function updateTotal() {
 }
 
 function handle_addDetailItem() {
+    headerNav.classList.add('static');
     detailProductParent.classList.add('fixed');
     let product = this.parentElement.parentElement;
     let productData = getProductData(product);
@@ -187,23 +188,38 @@ function handle_addDetailItem() {
 
     const kembali = document.querySelectorAll('.kembali');
     kembali.forEach(k => {
-        k.onclick = (e) => {
+        k.addEventListener('click', (e) => {
             detailProductParent.classList.remove('fixed');
             detailProductParent.removeChild(newNodeDetail);
             e.preventDefault();
-        };
+        });
     });
     
-    window.onclick = (e) => {
+    window.addEventListener('click', (e) => {
         if(e.target === detailProductParent) {
             detailProductParent.classList.remove('fixed');
             detailProductParent.removeChild(newNodeDetail);
         };
-    };
+    });
     const buttonDetail = document.querySelectorAll('.button-detail');
     buttonDetail.forEach(bd => {
-        bd.addEventListener('click', function() {
-            let cartBoxElement = CartBoxComponent(productData.title, productData.price, productData.imgSrc);
+        bd.addEventListener('click', function(e) {
+            e.preventDefault();
+            let newToAdd = {
+                title: productData.title,
+                price: productData.price,
+                imgSrc: productData.imgSrc,
+            };
+
+            // handle item is already exist
+            if(itemsAdded.find(el => el.title == newToAdd.title)){
+                alert("This Item is Already Exist!");
+                return;
+            } else {
+                itemsAdded.push(newToAdd);
+            }
+
+            let cartBoxElement = CartBoxComponent(newToAdd.title, newToAdd.price, newToAdd.imgSrc);
             let newNode = document.createElement("div");
             newNode.innerHTML = cartBoxElement;
             const cartContent = cart.querySelector(".cart-content");
@@ -212,14 +228,8 @@ function handle_addDetailItem() {
 
         });
     }); 
-    // handle_addProductDetail();
     update();
 }
-
-// function handle_addProductDetail() {
-//     let product = this.parentElement.parentElement;
-//     console.log(product);
-// }
 
 //======================= HTML COMPONENTS =======================
 function CartBoxComponent(title, price, imgSrc) {
