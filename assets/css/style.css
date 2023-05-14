@@ -50,11 +50,6 @@ header {
     z-index: 100;
     padding: 0 20px;
 }
-header.static {
-    position: sticky;
-    top: 0;
-    left: 0;
-}
 
 .nav {
     display: flex;
@@ -207,6 +202,7 @@ header.static {
     color: var(--bg-color);
     font-size: 1rem;
     font-weight: 500;
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -479,19 +475,20 @@ header.static {
     align-items: center;
     justify-content: center;
     max-width: 1200px;
-    width: 100%;
+    width: 95%;
     height: 37rem;
     padding: 0 2rem;
     background-color: var(--bg-color);
-    overflow: hidden;
+    /* overflow: hidden; */
     animation: detailAnimate 0.27s ease-in-out;
-    /* margin: 0 .8rem; */
+    margin: 0 auto;
+
 }
 
 .container-image, .container-title {
     max-width: 32rem;
     width: 50%;
-
+    background-color: var(--bg-color);
 }
 
 .container-image .content-image {
@@ -734,17 +731,50 @@ header.static {
 
     .container-detail {
         flex-direction: column;
-    }
+        padding: 0;
+        /* height: 30rem; */
+        max-width: 30rem;
+        width: 95%;
+        margin: 0 auto;
+        background-color: transparent;
 
+    }
+    
     .container-image, .container-title {
-        max-width: 20rem;
         width: 100%;
-        /* height: 20rem; */
+        background-color: var(--bg-color);
     }
-
+    .container-detail .container-title .content-title {
+        padding: 30px;
+    }
+    .container-image .content-image {
+        width: 60%;
+        margin: 20px auto;
+    }
+    
+    .container-detail .container-title .content-title .title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 0.4rem;  
+    }
+    
+    .container-detail .container-title .content-title .detail-paragraf {
+        font-size: .98rem;
+        line-height: 1.6;
+        color: var(--text-color);
+        margin-bottom: 0.4rem;
+    }
+    
+    .container-detail .container-title .content-title .detail-price {
+        font-size: 1.7rem;
+    }
+    .container-detail .container-title .content-title .kembali {
+        display: none;
+    }
 }
 
-@media screen and (max-height: 768px) {
+/* @media screen and (max-height: 768px) {
     .container-detail {
         max-width: 1000px;
         height: 31rem;
@@ -779,7 +809,7 @@ header.static {
         margin: .4rem 0;
         letter-spacing: 1px;
     }
-}
+} */
 @media screen and (max-width: 768px) {
     .bantuan-content .the-content:hover {
         transform: scale(1.18);

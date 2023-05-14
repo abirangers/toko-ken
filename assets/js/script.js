@@ -178,7 +178,6 @@ function updateTotal() {
 }
 
 function handle_addDetailItem() {
-    headerNav.classList.add('static');
     detailProductParent.classList.add('fixed');
     let product = this.parentElement.parentElement;
     let productData = getProductData(product);
@@ -228,7 +227,7 @@ function handle_addDetailItem() {
 
         });
     }); 
-    update();
+    // update();
 }
 
 //======================= HTML COMPONENTS =======================
@@ -258,7 +257,7 @@ function detailProduct(title, price, imgSrc) {
                 <div class="content-title">
                     <a href="#" class="kembali">kembali</a>
                     <h2 class="title">${title}</h2>
-                    <p class="detail-paragraf">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quae nihil eos incidunt eligendi consequuntur reprehenderit asperiores obcaecati voluptas possimus accusantium aut, labore, temporibus vero quia distinctio omnis ab molestias maxime nesciunt, nam est adipisci! Quos inventore dolorum hic iusto.</p>
+                    <p class="detail-paragraf">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quae nihil eos incidunt eligendi consequuntur reprehenderit asperiores obcaecati voluptas possimus accusantium.</p>
                     <h2 class="detail-price">${price}</h2>
                     <a href="#" class="button-detail">add to cart</a>
                 </div>
