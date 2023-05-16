@@ -181,15 +181,13 @@ function handle_addDetailItem() {
     detailProductParent.classList.add('fixed');
     let product = this.parentElement.parentElement;
     let productData = getProductData(product);
-    let newNodeDetail = document.createElement('div');
-    newNodeDetail.innerHTML = detailProduct(productData.title, productData.price, productData.imgSrc);
-    detailProductParent.appendChild(newNodeDetail);
+    detailProductParent.innerHTML = detailProduct(productData.title, productData.price, productData.imgSrc);
 
     const kembali = document.querySelectorAll('.kembali');
     kembali.forEach(k => {
         k.addEventListener('click', (e) => {
+            console.log(`haloo ${e}`);
             detailProductParent.classList.remove('fixed');
-            detailProductParent.removeChild(newNodeDetail);
             e.preventDefault();
         });
     });
@@ -227,7 +225,6 @@ function handle_addDetailItem() {
 
         });
     }); 
-    // update();
 }
 
 //======================= HTML COMPONENTS =======================
@@ -248,18 +245,19 @@ function CartBoxComponent(title, price, imgSrc) {
 function detailProduct(title, price, imgSrc) {
     return `
         <div class="container-detail">
-            <div class="container-image">
-                <div class="content-image">
+        <div class="container-image">
+        <div class="content-image">
                     <img src="${imgSrc}" alt="" class="detail-image">
                 </div>
             </div>
             <div class="container-title">
                 <div class="content-title">
-                    <a href="#" class="kembali">kembali</a>
-                    <h2 class="title">${title}</h2>
+                <a href="#" class="kembali">kembali</a>
+                <h2 class="title">${title}</h2>
                     <p class="detail-paragraf">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quae nihil eos incidunt eligendi consequuntur reprehenderit asperiores obcaecati voluptas possimus accusantium.</p>
                     <h2 class="detail-price">${price}</h2>
                     <a href="#" class="button-detail">add to cart</a>
+                <a href="#" class="kembali kembali-2">kembali</a>
                 </div>
             </div>
         </div>`

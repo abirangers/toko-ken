@@ -90,6 +90,7 @@ header {
 #cart-icon {
     font-size: 1.8rem;
     cursor: pointer;
+    position: relative;
 }
 
 .bars-right {
@@ -474,19 +475,18 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 1200px;
-    width: 95%;
-    height: 37rem;
-    padding: 0 2rem;
+    max-width: max-content;
+    width: 100%;
+    height: max-content;
+    padding: 30px;
     background-color: var(--bg-color);
-    /* overflow: hidden; */
     animation: detailAnimate 0.27s ease-in-out;
-    margin: 0 auto;
+    margin: 0 18px;
 
 }
 
 .container-image, .container-title {
-    max-width: 32rem;
+    max-width: 30rem;
     width: 50%;
     background-color: var(--bg-color);
 }
@@ -529,7 +529,7 @@ header {
     font-size: 1.7rem;
 }
 
-.container-detail .container-title .content-title .button-detail, .container-detail .container-title .content-title .kembali {
+.container-detail .container-title .content-title .button-detail, .kembali {
     display: inline-block;
     background-color: var(--text-color);
     color: var(--bg-color);
@@ -540,6 +540,10 @@ header {
     border-radius: .4rem;
     margin: 1rem 0;
     letter-spacing: 1px;
+}
+
+.kembali-2 {
+    display: none;
 }
 
 /* detail animation */
@@ -732,20 +736,17 @@ header {
     .container-detail {
         flex-direction: column;
         padding: 0;
-        /* height: 30rem; */
-        max-width: 30rem;
-        width: 95%;
-        margin: 0 auto;
         background-color: transparent;
 
     }
     
     .container-image, .container-title {
         width: 100%;
+        max-width: 35rem;
         background-color: var(--bg-color);
     }
     .container-detail .container-title .content-title {
-        padding: 30px;
+        padding: 0px 30px 30px;
     }
     .container-image .content-image {
         width: 60%;
@@ -772,7 +773,11 @@ header {
     .container-detail .container-title .content-title .kembali {
         display: none;
     }
+    .kembali-2 {
+        display: inline-block !important;
+    }
 }
+
 
 /* @media screen and (max-height: 768px) {
     .container-detail {
@@ -859,5 +864,36 @@ header {
     .cart {
         width: 280px;
     }
+    /* .container-detail .container-title .content-title .title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 0.4rem;  
+    }
+    
+    .container-detail .container-title .content-title .detail-paragraf {
+        font-size: .9rem;
+        line-height: 1.6;
+        color: var(--text-color);
+        margin-bottom: 0.4rem;
+    }
+    
+    .container-detail .container-title .content-title .detail-price {
+        font-size: 1.6rem;
+    }
+     */
+    .container-detail .container-title .content-title .button-detail, .kembali {
+        /* display: inline-block;
+        background-color: var(--text-color);
+        color: var(--bg-color);
+        padding: 10px;
+        text-transform: capitalize;
+        font-weight: 400;
+        font-size: .9rem;
+        border-radius: .4rem; */
+        margin: .1rem 0;
+        /* letter-spacing: 1px; */
+    }
+    
     
 }
