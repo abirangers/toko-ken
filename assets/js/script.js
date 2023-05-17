@@ -108,6 +108,7 @@ let itemsAdded = [];
 function handle_addCartItem() {
     let product = this.parentElement.parentElement;
     let productData = getProductData(product);
+    
 
     let newToAdd = {
         title: productData.title,
@@ -173,8 +174,8 @@ function updateTotal() {
         let quantity = cartBox.querySelector('.cart-quantity').value;
         total += price * quantity;
     });
-    total = Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(total);
-    totalElement.innerHTML = total; 
+    total = Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', notation: 'compact' }).format(total);
+    totalElement.innerHTML = total;
 }
 
 function handle_addDetailItem() {
@@ -186,7 +187,6 @@ function handle_addDetailItem() {
     const kembali = document.querySelectorAll('.kembali');
     kembali.forEach(k => {
         k.addEventListener('click', (e) => {
-            console.log(`haloo ${e}`);
             detailProductParent.classList.remove('fixed');
             e.preventDefault();
         });
