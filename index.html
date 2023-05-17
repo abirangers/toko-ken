@@ -1,179 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>kenShop</title>
     <!-- box icon -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <!-- style -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
     <script src="https://unpkg.com/feather-icons"></script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- HEADER -->
     <header>
-        <!-- NAV -->
-        <div class="nav container">
-            <a href="index.html" class="logo"><span>ken</span>Shop</a>
-            <!-- NAVBAR -->
-            <nav class="navbar">
-                <ul class="nav-list">
-                    <li class="list">
-                        <a href="#product" class="content" class="content">product</a>
-                     </li>
-                    <li class="list">
-                        <a href="assets/html/tentang.html" class="content">tentang</a>
-                    </li>
-                    <li class="list">
-                        <a href="assets/html/bantuan.html" class="content">bantuan</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="bars-right">
-                <i class="fa-solid fa-bars fa-2xl bars"></i>
-                <!-- CART ICON -->
-                <i class='bx bx-shopping-bag' id="cart-icon"></i>
-            </div>
-
-            <!-- CART -->
-            <div class="cart">
-                <h2 class="cart-title">Your Cart</h2>
-
-                <!-- CONTENT -->
-                <div class="cart-content">
-                    
-                </div>
-
-                <!-- TOTAL -->
-                <div class="total">
-                    <div class="total-title">Total</div>
-                    <div class="total-price">Rp. 0</div>
-                </div>
-                <!-- BUY BUTTON -->
-                <button type="button" class="btn-buy">Buy Now</button>
-                <!-- CART CLOSE -->
-                <i class='bx bx-x' id="cart-close"></i>
-            </div>
+      <!-- NAV -->
+      <div class="nav container">
+        <a href="index.html" class="logo"><span>ken</span>Shop</a>
+        <!-- NAVBAR -->
+        <nav class="navbar">
+          <ul class="nav-list">
+            <li class="list">
+              <a href="#product" class="content" class="content">product</a>
+            </li>
+            <li class="list">
+              <a href="assets/html/tentang.html" class="content">tentang</a>
+            </li>
+            <li class="list">
+              <a href="assets/html/bantuan.html" class="content">bantuan</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="bars-right">
+          <i class="fa-solid fa-bars fa-2xl bars"></i>
+          <!-- CART ICON -->
+          <i class="bx bx-shopping-bag" id="cart-icon"></i>
         </div>
+
+        <!-- CART -->
+        <div class="cart">
+          <h2 class="cart-title">Your Cart</h2>
+
+          <!-- CONTENT -->
+          <div class="cart-content"></div>
+
+          <!-- TOTAL -->
+          <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price">Rp. 0</div>
+          </div>
+          <!-- BUY BUTTON -->
+          <button type="button" class="btn-buy">Buy Now</button>
+          <!-- CART CLOSE -->
+          <i class="bx bx-x" id="cart-close"></i>
+        </div>
+      </div>
     </header>
 
     <div id="home">
-        <div class="home-content">
-            <div class="home-image">
-                <img src="assets/img/hero-1-new.webp" alt="">
-            </div>
-            <div class="home-title">
-                <h1>Temukan barang yang kamu inginkan di <span class="ken">ken</span><span class="shoppe">Shop</span></h1>
-                <p>kenShop adalah e-commerce yang dapat memberikan pengalaman terbaik untuk jual beli bagi pengguna</p>
-                <a href="#product" class="home-button">
-                    Explore Product
-                </a>
-            </div>
+      <div class="home-content">
+        <div class="home-image">
+          <img src="assets/img/hero-1-new.webp" alt="" />
         </div>
+        <div class="home-title">
+          <h1>
+            Temukan barang yang kamu inginkan di <span class="ken">ken</span
+            ><span class="shoppe">Shop</span>
+          </h1>
+          <p>
+            kenShop adalah e-commerce yang dapat memberikan pengalaman terbaik
+            untuk jual beli bagi pengguna
+          </p>
+          <a href="#product" class="home-button"> Explore Product </a>
+        </div>
+      </div>
     </div>
 
     <!-- SHOP SECTION -->
     <section class="shop container" id="product">
-        <h2 class="section-title">Shop Products</h2>
+      <h2 class="section-title">Shop Products</h2>
 
-        <!-- CONTENT -->
-        <div class="shop-content">
-            
-            <div class="product-box">
-                <img src="assets/img/product1.webp" alt="" class="product-img">
-                <h2 class="product-title">T-shirt Muhammad Ali // Morrow</h2>
-                <span class="product-price">Rp. 125.000</span>
-                <div class="button-product">
-                    <i class='bx bx-shopping-bag add-cart'></i>
-                    <img src="assets/img/eye.svg" alt="" class="eye">
-                </div>
-            </div>
-            
-            <div class="product-box">
-                <img src="assets/img/product2.jpg" alt="" class="product-img">
-                <h2 class="product-title">Backpack Canvas Retro Vintage</h2>
-                <span class="product-price">Rp. 168.888</span>
-                <div class="button-product">
-                    <i class='bx bx-shopping-bag add-cart'></i>
-                    <img src="assets/img/eye.svg" alt="" class="eye">
-                </div>
-            </div>
-            
-            <div class="product-box">
-                <img src="assets/img/product3.jpg" alt="" class="product-img">
-                <h2 class="product-title">The North Face Jacket</h2>
-                <span class="product-price">Rp. 420.000</span>
-                <div class="button-product">
-                    <i class='bx bx-shopping-bag add-cart'></i>
-                    <img src="assets/img/eye.svg" alt="" class="eye">
-                </div>
-            </div>
-            
-            <div class="product-box">
-                <img src="assets/img/product4.jpg" alt="" class="product-img">
-                <h2 class="product-title">ETERNALWORKS STRIPE GREEN KNITWEAR</h2>
-                <span class="product-price">Rp. 157.050</span>
-                <div class="button-product">
-                    <i class='bx bx-shopping-bag add-cart'></i>
-                    <img src="assets/img/eye.svg" alt="" class="eye">
-                </div>
-            </div>
-            
-            <div class="product-box">
-                <img src="assets/img/product5.jpg" alt="" class="product-img">
-                <h2 class="product-title">Aloof SMILE BOY</h2>
-                <span class="product-price">Rp. 299.000</span>
-                <div class="button-product">
-                    <i class='bx bx-shopping-bag add-cart'></i>
-                    <img src="assets/img/eye.svg" alt="" class="eye">
-                </div>
-            </div>
-            
-            <div class="product-box">
-                <img src="assets/img/product6.jpg" alt="" class="product-img">
-                <h2 class="product-title">TRUCKER HAT</h2>
-                <span class="product-price">Rp. 69.999</span>
-                <div class="button-product">
-                    <i class='bx bx-shopping-bag add-cart'></i>
-                    <img src="assets/img/eye.svg" alt="" class="eye">
-                </div>
-            </div>
-            
-            <div class="product-box">
-                <img src="assets/img/product7.jpg" alt="" class="product-img">
-                <h2 class="product-title">Tas The North Face Borealis Backpack</h2>
-                <span class="product-price">Rp. 679.000</span>
-                <div class="button-product">
-                    <i class='bx bx-shopping-bag add-cart'></i>
-                    <img src="assets/img/eye.svg" alt="" class="eye">
-                </div>
-            </div>
-            
-            <div class="product-box">
-                <img src="assets/img/product8.jpeg" alt="" class="product-img">
-                <h2 class="product-title">New Balance 992</h2>
-                <span class="product-price">Rp. 550.000</span>
-                <div class="button-product">
-                    <i class='bx bx-shopping-bag add-cart'></i>
-                    <img src="assets/img/eye.svg" alt="" class="eye">
-                </div>
-            </div>
+      <!-- CONTENT -->
+      <div class="shop-content">
+        <div class="product-box">
+          <img src="assets/img/product1.webp" alt="" class="product-img" />
+          <h2 class="product-title">T-shirt Muhammad Ali // Morrow</h2>
+          <span class="product-price">Rp. 125.000</span>
+          <div class="button-product">
+            <i class="bx bx-shopping-bag add-cart"></i>
+            <img src="assets/img/eye.svg" alt="" class="eye" />
+          </div>
         </div>
+
+        <div class="product-box">
+          <img src="assets/img/product2.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Backpack Canvas Retro Vintage</h2>
+          <span class="product-price">Rp. 168.888</span>
+          <div class="button-product">
+            <i class="bx bx-shopping-bag add-cart"></i>
+            <img src="assets/img/eye.svg" alt="" class="eye" />
+          </div>
+        </div>
+
+        <div class="product-box">
+          <img src="assets/img/product3.jpg" alt="" class="product-img" />
+          <h2 class="product-title">The North Face Jacket</h2>
+          <span class="product-price">Rp. 420.000</span>
+          <div class="button-product">
+            <i class="bx bx-shopping-bag add-cart"></i>
+            <img src="assets/img/eye.svg" alt="" class="eye" />
+          </div>
+        </div>
+
+        <div class="product-box">
+          <img src="assets/img/product4.jpg" alt="" class="product-img" />
+          <h2 class="product-title">ETERNALWORKS STRIPE GREEN KNITWEAR</h2>
+          <span class="product-price">Rp. 157.050</span>
+          <div class="button-product">
+            <i class="bx bx-shopping-bag add-cart"></i>
+            <img src="assets/img/eye.svg" alt="" class="eye" />
+          </div>
+        </div>
+
+        <div class="product-box">
+          <img src="assets/img/product5.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Aloof SMILE BOY</h2>
+          <span class="product-price">Rp. 299.000</span>
+          <div class="button-product">
+            <i class="bx bx-shopping-bag add-cart"></i>
+            <img src="assets/img/eye.svg" alt="" class="eye" />
+          </div>
+        </div>
+
+        <div class="product-box">
+          <img src="assets/img/product6.jpg" alt="" class="product-img" />
+          <h2 class="product-title">TRUCKER HAT</h2>
+          <span class="product-price">Rp. 69.999</span>
+          <div class="button-product">
+            <i class="bx bx-shopping-bag add-cart"></i>
+            <img src="assets/img/eye.svg" alt="" class="eye" />
+          </div>
+        </div>
+
+        <div class="product-box">
+          <img src="assets/img/product7.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Tas The North Face Borealis Backpack</h2>
+          <span class="product-price">Rp. 679.000</span>
+          <div class="button-product">
+            <i class="bx bx-shopping-bag add-cart"></i>
+            <img src="assets/img/eye.svg" alt="" class="eye" />
+          </div>
+        </div>
+
+        <div class="product-box">
+          <img src="assets/img/product8.jpeg" alt="" class="product-img" />
+          <h2 class="product-title">New Balance 992</h2>
+          <span class="product-price">Rp. 550.000</span>
+          <div class="button-product">
+            <i class="bx bx-shopping-bag add-cart"></i>
+            <img src="assets/img/eye.svg" alt="" class="eye" />
+          </div>
+        </div>
+      </div>
     </section>
 
-    <div class="detail">
-        
-    </div>
+    <div class="detail"></div>
 
     <footer class="footer">
-        
-        Copyright 2023 <span class="ken">Ken</span><span class="shoppe">Team</span>
-    
+      Copyright 2023 <span class="ken">Ken</span
+      ><span class="shoppe">Team</span>
     </footer>
 
     <script src="assets/js/script.js"></script>
-    <script src="https://kit.fontawesome.com/7ff3bc0990.js" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://kit.fontawesome.com/7ff3bc0990.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
