@@ -20,12 +20,6 @@ closeCart.addEventListener("click", () => {
   cart.classList.remove("active");
 });
 
-// eye.forEach(e => {
-//     e.addEventListener('click', () => {
-//         detailProductParent.classList.add('fixed');
-//     });
-// });
-
 // Start when the document is ready
 if (document.readyState == "loading") {
   document.addEventListener("DOMContentLoaded", start);
@@ -42,7 +36,6 @@ function start() {
 function update() {
   addEvents();
   updateTotal();
-  // handle_addDetailItem();
 }
 
 //======================= UPDATE & RERENDER =======================
