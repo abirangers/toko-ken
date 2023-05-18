@@ -71,11 +71,13 @@ function addEvents() {
 function getProductData(product) {
   let title = product.querySelector(".product-title").innerHTML;
   let price = product.querySelector(".product-price").innerHTML;
+  let desk = product.querySelector(".desk").innerHTML;
   let imgSrc = product.querySelector(".product-img").src;
 
   return {
     title,
     price,
+    desk,
     imgSrc,
   };
 }
@@ -160,18 +162,19 @@ function updateTotal() {
   total = Intl.NumberFormat("id-ID", {
     style: "currency",
     currency: "IDR",
-    notation: "compact",
   }).format(total);
   totalElement.innerHTML = total;
 }
 
 function handle_addDetailItem() {
   detailProductParent.classList.add("fixed");
+  document.body.style.overflow = 'hidden';
   let product = this.parentElement.parentElement;
   let productData = getProductData(product);
   detailProductParent.innerHTML = detailProduct(
     productData.title,
     productData.price,
+    productData.desk,
     productData.imgSrc
   );
 
@@ -179,6 +182,7 @@ function handle_addDetailItem() {
   kembali.forEach((k) => {
     k.addEventListener("click", (e) => {
       detailProductParent.classList.remove("fixed");
+      document.body.style.overflow = 'visible';
       e.preventDefault();
     });
   });
@@ -186,7 +190,8 @@ function handle_addDetailItem() {
   window.addEventListener("click", (e) => {
     if (e.target === detailProductParent) {
       detailProductParent.classList.remove("fixed");
-      detailProductParent.removeChild(newNodeDetail);
+      document.body.style.overflow = 'visible';
+      // detailProductParent.removeChild(newNodeDetail);
     }
   });
   const buttonDetail = document.querySelectorAll(".button-detail");
@@ -236,7 +241,7 @@ function CartBoxComponent(title, price, imgSrc) {
 </div>`;
 }
 
-function detailProduct(title, price, imgSrc) {
+function detailProduct(title, price, desk, imgSrc) {
   return `
         <div class="container-detail">
         <div class="container-image">
@@ -248,7 +253,7 @@ function detailProduct(title, price, imgSrc) {
                 <div class="content-title">
                 <a href="#" class="kembali">kembali</a>
                 <h2 class="title">${title}</h2>
-                    <p class="detail-paragraf">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quae nihil eos incidunt eligendi consequuntur reprehenderit asperiores obcaecati voluptas possimus accusantium.</p>
+                    <p class="detail-paragraf">${desk}</p>
                     <h2 class="detail-price">${price}</h2>
                     <a href="#" class="button-detail">add to cart</a>
                 <a href="#" class="kembali kembali-2">kembali</a>

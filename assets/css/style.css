@@ -34,6 +34,7 @@ section {
 }
 body {
   color: var(--text-color);
+  position: relative;
 }
 
 /* ======================== */
@@ -79,10 +80,18 @@ header {
   font-weight: 500;
   color: var(--text-color);
   transition: all 0.35s;
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  -ms-transition: all 0.35s;
+  -o-transition: all 0.35s;
 }
 .nav-list .list .content:hover {
   color: var(--main-color);
   transition: all 0.35s;
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  -ms-transition: all 0.35s;
+  -o-transition: all 0.35s;
 }
 
 #cart-icon {
@@ -201,6 +210,10 @@ header {
   font-weight: 500;
   border-radius: 10px;
   cursor: pointer;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
 .btn-buy:hover {
@@ -283,6 +296,10 @@ header {
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
 /* SHOP SECTION */
@@ -305,12 +322,20 @@ header {
 .product-box {
   position: relative;
   transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
 }
 
 .product-box:hover {
   padding: 10px;
   border: 1px solid var(--text-color);
   transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
 }
 
 .product-img {
@@ -337,6 +362,10 @@ header {
   display: flex;
   justify-content: flex-end;
   gap: 2px;
+}
+
+.desk {
+  display: none;
 }
 
 .add-cart,
@@ -420,10 +449,18 @@ header {
   transition: all 0.4s;
   background-color: var(--bg-color);
   color: #171427;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
 }
 
 .bantuan-content .the-content:hover {
   transform: scale(1.25);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  -o-transform: scale(1.25);
 }
 
 .bantuan-content .the-content > i {
@@ -445,13 +482,21 @@ header {
   bottom: 0;
   transition: all 0.5s;
   padding-top: 75px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
 }
 
 .detail.fixed {
   display: flex;
-  /* opacity: 1; */
-  overflow: hidden;
+  /*opacity: 1;*/
+  overflow: scroll;
   transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
 }
 
 .container-detail {
@@ -463,8 +508,9 @@ header {
   height: max-content;
   padding: 30px;
   background-color: var(--bg-color);
-  animation: detailAnimate 0.27s ease-in-out;
   margin: 0 18px;
+  animation: detailAnimate 0.27s ease-in-out;
+  -webkit-animation: detailAnimate 0.27s ease-in-out;
 }
 
 .container-image,
@@ -521,9 +567,13 @@ header {
   text-transform: capitalize;
   font-weight: 400;
   font-size: 1rem;
-  border-radius: 0.4rem;
   margin: 1rem 0;
   letter-spacing: 1px;
+  border-radius: 0.4rem;
+  -webkit-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  -ms-border-radius: 0.4rem;
+  -o-border-radius: 0.4rem;
 }
 
 .kembali-2 {
@@ -619,7 +669,11 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+}
 
   .nav-list {
     display: flex;
@@ -755,13 +809,21 @@ header {
 @media screen and (max-width: 768px) {
   .bantuan-content .the-content:hover {
     transform: scale(1.18);
-  }
+    -webkit-transform: scale(1.18);
+    -moz-transform: scale(1.18);
+    -ms-transform: scale(1.18);
+    -o-transform: scale(1.18);
+}
 }
 
 @media screen and (max-width: 664px) {
   .bantuan-content .the-content:hover {
     transform: scale(1.12);
-  }
+    -webkit-transform: scale(1.12);
+    -moz-transform: scale(1.12);
+    -ms-transform: scale(1.12);
+    -o-transform: scale(1.12);
+}
 }
 
 @media screen and (max-width: 500px) {
