@@ -168,7 +168,9 @@ function updateTotal() {
 
 function handle_addDetailItem() {
   detailProductParent.classList.add("fixed");
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow = "hidden";
+  headerNav.style.zIndex = "1";
+
   let product = this.parentElement.parentElement;
   let productData = getProductData(product);
   detailProductParent.innerHTML = detailProduct(
@@ -182,7 +184,7 @@ function handle_addDetailItem() {
   kembali.forEach((k) => {
     k.addEventListener("click", (e) => {
       detailProductParent.classList.remove("fixed");
-      document.body.style.overflow = 'visible';
+      document.body.style.overflow = "visible";
       e.preventDefault();
     });
   });
@@ -190,7 +192,7 @@ function handle_addDetailItem() {
   window.addEventListener("click", (e) => {
     if (e.target === detailProductParent) {
       detailProductParent.classList.remove("fixed");
-      document.body.style.overflow = 'visible';
+      document.body.style.overflow = "visible";
       // detailProductParent.removeChild(newNodeDetail);
     }
   });
