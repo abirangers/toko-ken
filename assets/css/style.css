@@ -471,7 +471,6 @@ header {
 .detail {
   background-color: rgba(0, 0, 0, 0.4);
   width: 100%;
-  /* height: 100%; */
   display: none;
   align-items: center;
   justify-content: center;
@@ -481,7 +480,6 @@ header {
   right: 0;
   bottom: 0;
   transition: all 0.5s;
-  /* padding-top: 75px; */
   padding: 15px 0;
   overflow-y: auto;
   z-index: 9999;
@@ -493,8 +491,6 @@ header {
 
 .detail.fixed {
   display: flex;
-  /*opacity: 1;*/
-  /* overflow: scroll; */
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -503,28 +499,27 @@ header {
 }
 
 .container-detail {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   max-width: max-content;
   width: 100%;
-  height: max-content;
-  padding: 30px;
+  padding: 0 30px;
   background-color: var(--bg-color);
   margin: 0 18px;
   animation: detailAnimate 0.27s ease-in-out;
   -webkit-animation: detailAnimate 0.27s ease-in-out;
+  max-height: calc(100vh - 2.5rem);
+  overflow-y: auto;
 }
 
 .container-image,
 .container-title {
   max-width: 30rem;
-  width: 50%;
   background-color: var(--bg-color);
 }
 
 .container-image .content-image {
-  /* width: 100%; */
   height: 100%;
   display: flex;
   align-items: center;
@@ -765,16 +760,21 @@ header {
   }
 
   .container-detail {
-    flex-direction: column;
     padding: 0;
-    background-color: transparent;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    height: 40rem;
+    max-height: calc(100vh - 3rem);
+    overflow-y: auto;
+    background-color: var(--bg-color);
+    gap: 1rem;
   }
 
   .container-image,
   .container-title {
     width: 100%;
     max-width: 35rem;
-    background-color: var(--bg-color);
   }
   .container-detail .container-title .content-title {
     padding: 0px 30px 30px;
@@ -799,7 +799,7 @@ header {
   }
 
   .container-detail .container-title .content-title .detail-price {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
   .container-detail .container-title .content-title .kembali {
     display: none;
@@ -829,18 +829,6 @@ header {
   }
 }
 
-@media screen and (max-width: 500px) {
-  /* .nav {
-    padding: 20px;
-  }
-  .logo {
-    font-size: 1.3rem;
-  }
-  .navbar {
-    top: 60px;
-  } */
-}
-
 /* For Medium Devices */
 @media screen and (max-width: 400px) {
   .nav {
@@ -866,8 +854,18 @@ header {
     width: 280px;
   }
 
+  .container-detail .container-title .content-title .title {
+    font-size: 1.2rem;
+  }
+
+  .container-detail .container-title .content-title .detail-price {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
   .container-detail .container-title .content-title .button-detail,
   .kembali {
     margin: 0.1rem 0;
+    font-size: 0.8rem;
   }
 }
